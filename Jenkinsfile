@@ -16,7 +16,13 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-             git 'https://github.com/Tanukusolman/msbuild_project.git'   
+             git 'https://github.com/Tanukusolman/msbuild_project.git' 
+                stage("Env Build Number"){
+            steps{
+                echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}"                                                
+            }
+        }
             }
         }
         stage('Restore') {
