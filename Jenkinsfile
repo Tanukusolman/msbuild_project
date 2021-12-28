@@ -27,12 +27,7 @@ bat 'C:\\Windows\\System32\\inetsrv\\AppCmd stop site "default"'
 } 
 stage('start AppWebsite') {
 steps {
-bat 'C:\\Windows\\System32\\inetsrv>AppCmd start site "default"'
-}
-} 
- stage('iis service') {
-steps {
-bat 'C:\\windows\\system32\\inetsrv\\appcmd.exe'
+bat 'C:\\Windows\\System32\\inetsrv\\AppCmd start site "default"'
 }
 } 
 }
