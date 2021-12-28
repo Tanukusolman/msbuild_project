@@ -22,12 +22,12 @@ bat 'iisreset'
 }
  stage('stop AppWebsite') {
 steps {
-bat 'C:\\Windows\\System32\\inetsrv>AppCmd stop site "default"'
+bat 'c:\\Windows\\System32\\inetsrv>AppCmd stop site "default"'
 }
 } 
 stage('start AppWebsite') {
 steps {
-bat 'C:\\Windows\\System32\\inetsrv>AppCmd start site "default"'
+bat 'c:\\Windows\\System32\\inetsrv>AppCmd start site "default"'
 }
 } 
  stage('iis service') {
