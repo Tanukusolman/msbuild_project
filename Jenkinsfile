@@ -20,14 +20,14 @@ steps {
 bat 'iisreset'
 }
 }
- stage('list AppWebsite') {
+ stage('windows activation service') {
 steps {
-bat 'list sites'
+bat 'net stop WAC'
 }
 } 
-stage('start AppWebsite') {
+stage('worldwidewebpublishingservice') {
 steps {
-bat 'start site "default"'
+bat 'net start W3SVC'
 }
 }  
 }
