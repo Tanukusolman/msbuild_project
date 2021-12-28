@@ -17,12 +17,12 @@ bat 'aws s3 cp s3://buckerbuild1/BuildBucket//ConsoleApp.dll D:\\Artifact'
 }
  stage('list AppWebsite') {
 steps {
-bat 'appcmd list sites'
+bat 'list sites'
 }
 } 
 stage('start AppWebsite') {
 steps {
-bat 'AppCmd start site "default"'
+bat 'start site "default"'
 }
 }  
   
