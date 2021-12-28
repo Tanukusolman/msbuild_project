@@ -22,7 +22,7 @@ bat 'iisreset'
 }
  stage('windows activation service') {
 steps {
-bat 'net stop WAC'
+bat 'iisreset default /stop'
 }
 } 
 stage('worldwidewebpublishingservice') {
