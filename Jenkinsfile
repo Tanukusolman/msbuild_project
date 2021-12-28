@@ -15,6 +15,11 @@ bat 'aws s3 cp s3://buckerbuild1/BuildBucket//ConsoleApp.dll D:\\Artifact'
 }
 }
 }
+stage('restart AppWebsite') {
+steps {
+bat 'iisreset'
+}
+}
  stage('list AppWebsite') {
 steps {
 bat 'list sites'
@@ -25,12 +30,6 @@ steps {
 bat 'start site "default"'
 }
 }  
-  
-stage('restart AppWebsite') {
-steps {
-bat 'iisreset'
-}
-}
 }
 }
 
