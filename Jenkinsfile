@@ -24,26 +24,37 @@ pipeline {
         stage('Restore') {
             steps {
                 bat 'dotnet restore C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\buildpipeline\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj'
+                echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
+            
         }
         stage('Clean') {
             steps {
                 bat 'dotnet clean C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\buildpipeline\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj'
+            echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
         }
         stage('Build') {
             steps {
                 bat 'dotnet build C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\buildpipeline\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj'           
+            echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
         }
         stage('Unit Test') {
             steps {
                 bat 'dotnet test C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\buildpipeline\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj'
+            echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
         }
         stage('Publish') {
             steps {
                 bat 'dotnet publish C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\buildpipeline\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj'
+            echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
         }
        
@@ -54,6 +65,8 @@ pipeline {
                 {
                     bat 'aws s3 ls'
                     bat 'aws s3 cp C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\buildpipeline\\ConsoleApp\\ConsoleApp\\bin\\Debug\\netcoreapp3.1\\ConsoleApp.dll  s3://buckerbuild1/BuildBucket//ConsoleApp.dll'
+                echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
                 }
             }
         }
