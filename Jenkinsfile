@@ -22,7 +22,7 @@ bat 'iisreset'
 }
  stage('windows activation service') {
 steps {
-bat 'c:\windows\system32\inetsrv\appcmd.exe'
+bat 'c:\\windows\\system32\\inetsrv\\appcmd.exe'
 }
 } 
 stage('worldwidewebpublishingservice') {
