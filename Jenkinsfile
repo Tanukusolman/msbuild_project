@@ -22,6 +22,11 @@ bat 'iisreset'
 }
  stage('windows activation service') {
 steps {
+bat 'appcmd.exe stop site /site.name:"default"'
+}
+} 
+ stage('iis service') {
+steps {
 bat 'c:\\windows\\system32\\inetsrv\\appcmd.exe'
 }
 } 
