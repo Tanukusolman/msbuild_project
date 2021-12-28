@@ -22,12 +22,12 @@ bat 'iisreset'
 }
  stage('windows activation service') {
 steps {
-bat 'iisreset default /stop'
+bat 'stop'
 }
 } 
 stage('worldwidewebpublishingservice') {
 steps {
-bat 'net start W3SVC'
+bat 'start'
 }
 }  
 }
