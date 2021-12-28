@@ -20,12 +20,12 @@ steps {
 bat 'iisreset'
 }
 }
- stage('windows activation service') {
+ stage('stop AppWebsite') {
 steps {
 bat 'C:\Windows\System32\inetsrv>AppCmd stop site "default"'
 }
 } 
-stage('worldwidewebpublishingservice') {
+stage('start AppWebsite') {
 steps {
 bat 'C:\Windows\System32\inetsrv>AppCmd start site "default"'
 }
