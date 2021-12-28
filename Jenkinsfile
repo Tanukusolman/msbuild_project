@@ -6,9 +6,6 @@ environment {
 awscli = "C:\\Program Files\\Amazon\\AWSCLI\\bin"
 appcmd = "C:\\Windows\\System32\\inetsrv"
 }
-
-
-
 stages {
 stage('S3download') {
 steps {
@@ -18,6 +15,17 @@ bat 'aws s3 cp s3://buckerbuild1/BuildBucket//ConsoleApp.dll D:\\Artifact'
 }
 }
 }
+ stage('list AppWebsite') {
+steps {
+bat 'appcmd list sites'
+}
+} 
+stage('start AppWebsite') {
+steps {
+bat 'AppCmd start site "default"'
+}
+}  
+  
 stage('restart AppWebsite') {
 steps {
 bat 'iisreset'
