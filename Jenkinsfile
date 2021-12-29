@@ -57,7 +57,15 @@ pipeline {
                 echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
         }
-       
+       stage ('Versioning') {
+        steps {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '0a607455-6969-4f96-af53-5a23eedf1ae0', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
+{
+bat'aws s3api put-bucket-versioning --bucket BuildBucket --versioning-configuration Status=Enabled'
+
+}
+}
+}
         stage('Uploading') {
                steps {
       // you need cloudbees aws credentials
