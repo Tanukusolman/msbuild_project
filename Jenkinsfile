@@ -17,6 +17,13 @@ echo "The build number is ${env.BUILD_NUMBER}"
 }
 }
 }
+ stage('list AppWebsites') {
+steps {
+bat 'C:\Windows\System32\inetsrv>appcmd list sites'
+echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
+}
+}  
 stage('restart AppWebsite') {
 steps {
 bat 'iisreset'
