@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Restore') {
             steps {
-                bat 'dotnet restore C:\Program Files (x86)\Jenkins'
+                bat 'dotnet restore C:\\Program Files (x86)\\Jenkins'
                 echo "The build number is ${env.BUILD_NUMBER}"
                 echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
