@@ -5,7 +5,6 @@ pipeline {
         
         dotnet='C:\\Program Files (x86)\\dotnet'
         awscli = "C:\\Program Files\\Amazon\\AWSCLIV2\\awscli"
-        workspace = 'C:\\Program Files (x86)\\Jenkins'
     }
 
     stages {
