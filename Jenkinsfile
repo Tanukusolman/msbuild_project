@@ -5,7 +5,7 @@ pipeline {
         
         dotnet='C:\\Program Files (x86)\\dotnet'
         awscli = "C:\\Program Files\\Amazon\\AWSCLIV2\\awscli"
-        worspace = 'C:\\Windows\\Jenkins\\workspace'
+        workspace = 'C:\\Program Files (x86)\\Jenkins'
     }
 
     stages {
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Restore') {
             steps {
-                bat 'dotnet restore C:\\Windows\\Jenkins\\workspace'
+                bat 'dotnet restore C:\Program Files (x86)\Jenkins'
                 echo "The build number is ${env.BUILD_NUMBER}"
                 echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
             }
