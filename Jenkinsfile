@@ -66,6 +66,13 @@ bat 'aws s3api put-bucket-versioning --bucket buckerbuild1 --versioning-configur
 }
 }
 }
+        stage('Zip') {
+         steps  {
+                bat 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell Compress-Archive C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\build_pipeline\\ConsoleApp\\ConsoleApp\\bin\\Release\\netcoreapp3.1 C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\build_pipeline\\ConsoleApp\\ConsoleApp\\bin\\Release\\netcoreapp3.1\\ConsoleApp.dll.zip'
+                echo "END - ZIP"
+            }
+        }
+    
         stage('Uploading') {
                steps {
       // you need cloudbees aws credentials
