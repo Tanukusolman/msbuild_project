@@ -61,7 +61,7 @@ pipeline {
         steps {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '0a607455-6969-4f96-af53-5a23eedf1ae0', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
 {
-bat'aws s3api put-bucket-versioning --bucket BuildBucket --versioning-configuration Status=Enabled'
+bat 'aws s3  api put-bucket-versioning --bucket buckerbuild1 --versioning-configuration Status=Enabled'
 
 }
 }
