@@ -33,8 +33,8 @@ echo "The build number is ${env.BUILD_ID}"
 stage('restart AppWebsite') {
 steps {
 bat 'iisreset'
-echo "The build number is ${env.BUILD_ID}"
-                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
+echo "The build number is ${env.WORKSPACE}"
+                echo "You can also use \${WORKSPACE} -> ${WORKSPACE}"  
 }
 }
  stage('stop AppWebsite') {
