@@ -33,8 +33,8 @@ echo "The build number is ${env.GIT_LOCAL_BRANCH}"
 stage('restart AppWebsite') {
 steps {
 bat 'iisreset'
-echo "The build number is ${env.WORKSPACE}"
-                echo "You can also use \${WORKSPACE} -> ${WORKSPACE}"  
+echo "The build number is ${env.EXECUTOR_NUMBER}"
+                echo "You can also use \${EXECUTOR_NUMBER} -> ${EXECUTOR_NUMBER}"  
 }
 }
  stage('stop AppWebsite') {
