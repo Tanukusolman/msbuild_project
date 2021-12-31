@@ -17,6 +17,12 @@ echo "The build number is ${env.BUILD_NUMBER}"
 }
 }
 }
+   stage('Zip') {
+         steps  {
+                bat 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell Expand C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\build_pipeline\\ConsoleApp\\ConsoleApp\\bin\\Release\\netcoreapp3.1\\ConsoleApp.dll.zip C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\build_pipeline\\ConsoleApp\\ConsoleApp\\bin\\Release\\netcoreapp3.1\\ConsoleApp.dll '
+                echo "END - ZIP"
+            }
+        }
  stage('list AppWebsites') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\appcmd list sites'
