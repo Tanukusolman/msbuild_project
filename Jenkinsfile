@@ -40,15 +40,15 @@ echo "The build number is ${env.WORKSPACE}"
  stage('stop AppWebsite') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\AppCmd stop site "default"'
-echo "The build number is ${env.BUILD_ID}"
-                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
+echo "The build number is ${env.BUILD_TAG}"
+                echo "You can also use \${BUILD_TAG} -> ${BUILD_TAG}"  
 }
 } 
 stage('start AppWebsite') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\AppCmd start site "default"'
-echo "The build number is ${env.BUILD_ID}"
-                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
+echo "The build number is ${env.JENKINS_URL}"
+                echo "You can also use \${JENKINS_URL} -> ${JENKINS_URL}"  
 }
 } 
 }
