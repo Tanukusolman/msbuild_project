@@ -26,8 +26,8 @@ echo "The build number is ${env.BUILD_DISPLAY_NAME}"
  stage('list AppWebsites') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\appcmd list sites'
-echo "The build number is ${env.BUILD_ID}"
-                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
+echo "The build number is ${env.GIT_LOCAL_BRANCH}"
+                echo "You can also use \${GIT_LOCAL_BRANCH} -> ${GIT_LOCAL_BRANCH}"  
 }
 }  
 stage('restart AppWebsite') {
