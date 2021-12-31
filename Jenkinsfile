@@ -26,29 +26,29 @@ echo "The build number is ${env.BUILD_ID}"
  stage('list AppWebsites') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\appcmd list sites'
-echo "The build number is ${env.BUILD_NUMBER}"
-                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
 }
 }  
 stage('restart AppWebsite') {
 steps {
 bat 'iisreset'
-echo "The build number is ${env.BUILD_NUMBER}"
-                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
 }
 }
  stage('stop AppWebsite') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\AppCmd stop site "default"'
-echo "The build number is ${env.BUILD_NUMBER}"
-                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
 }
 } 
 stage('start AppWebsite') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\AppCmd start site "default"'
-echo "The build number is ${env.BUILD_NUMBER}"
-                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
 }
 } 
 }
