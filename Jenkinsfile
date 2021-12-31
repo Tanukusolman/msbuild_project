@@ -12,8 +12,8 @@ steps {
 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '0a607455-6969-4f96-af53-5a23eedf1ae0', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
 {
 bat 'aws s3 cp s3://buckerbuild1/BuildBucket//ConsoleApp.dll D:\\Artifact'
-echo "The build number is ${env.TAG_TIMESTAMP}"
-                echo "You can also use \${TAG_TIMESTAMP} -> ${TAG_TIMESTAMP}" 
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}" 
 }
 }
 }
@@ -33,8 +33,8 @@ echo "The build number is ${env.GIT_LOCAL_BRANCH}"
 stage('restart AppWebsite') {
 steps {
 bat 'iisreset'
-echo "The build number is ${env.EXECUTOR_NUMBER}"
-                echo "You can also use \${EXECUTOR_NUMBER} -> ${EXECUTOR_NUMBER}"  
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
 }
 }
  stage('stop AppWebsite') {
@@ -47,8 +47,8 @@ echo "The build number is ${env.BUILD_TAG}"
 stage('start AppWebsite') {
 steps {
 bat 'C:\\Windows\\System32\\inetsrv\\AppCmd start site "default"'
-echo "The build number is ${env.JENKINS_URL}"
-                echo "You can also use \${JENKINS_URL} -> ${JENKINS_URL}"  
+echo "The build number is ${env.BUILD_ID}"
+                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}"  
 }
 } 
 }
