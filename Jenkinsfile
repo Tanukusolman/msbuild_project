@@ -12,8 +12,8 @@ steps {
 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '0a607455-6969-4f96-af53-5a23eedf1ae0', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
 {
 bat 'aws s3 cp s3://buckerbuild1/BuildBucket//ConsoleApp.dll D:\\Artifact'
-echo "The build number is ${env.BUILD_ID}"
-                echo "You can also use \${BUILD_ID} -> ${BUILD_ID}" 
+echo "The build number is ${env.BUILD_DISPLAY_NAME}"
+                echo "You can also use \${BUILD_DISPLAY_NAME} -> ${BUILD_DISPLAY_NAME}" 
 }
 }
 }
